@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-import BehindTheApp from "./BehindTheApp";
-import NavBar from "./NavBar";
+import BehindTheApp from "./Components/BehindTheApp";
+import NavBar from "./Components/NavBar";
 import "./App.css";
 import backgroundImage from "./assets/background-photo.jpg";
 

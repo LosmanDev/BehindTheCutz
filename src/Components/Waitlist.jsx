@@ -1,7 +1,7 @@
 export default function Waitlist() {
   return (
     <div className="flex flex-col items-center justify-center animate-slideIn">
-      <h1 className="text-center lg:text-7xl text-4xl text-zinc-200 font-bold pt-28 mb-20 animate-fadeIn">
+      <h1 className="text-center lg:text-5xl text-3xl text-zinc-200 font-bold pt-28 mb-20 animate-fadeIn">
         Enter Your <span className="text-colr">Details</span>
       </h1>
       <input

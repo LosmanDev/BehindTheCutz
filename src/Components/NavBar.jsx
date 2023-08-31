@@ -5,7 +5,9 @@ export default function NavBar() {
   return (
     <div className="navbar animate-fadeIn">
       <div className="flex-1">
-        <img className="ml-2 align-middle" width={"80px"} src={logo} alt="" />
+        <a href="https://behind-the-cutz.netlify.app/">
+          <img className="ml-2 align-middle" width={"80px"} src={logo} alt="" />
+        </a>
       </div>
       <div className="flex-none">
         <a

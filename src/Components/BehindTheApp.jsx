@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Waitlist from "./Waitlist";
+import map from "../assets/map.png";
 
 export default function BehindTheApp() {
   const [show, setShow] = useState(false);
@@ -14,8 +15,55 @@ export default function BehindTheApp() {
       <h1 className="text-center lg:text-7xl text-4xl text-zinc-200 font-bold pt-28">
         Behind The <span className="text-colr">Cutz</span>
       </h1>
-      <div className="text-center" style={{ paddingTop: "250px" }}>
-        <p className="text-center lg:text-4xl  text-zinc-200 font-extralight pb-10">
+
+      <div className="text-center" style={{ paddingTop: "50px" }}>
+        <h2 className="lg:text-3xl text-2xl text-center pb-2">
+          Business <span className="text-colr">Hours</span>
+        </h2>
+        <p className="text-lg md:text-xl font-bold">
+          Monday: <span className="text-colr">Closed</span>
+        </p>
+        <p className="text-lg md:text-xl font-bold">
+          Tuesday: <span className="text-colr">8am-6pm</span>
+        </p>
+        <p className="text-lg md:text-xl font-bold">
+          Wednesday: <span className="text-colr">8am-6pm </span>
+        </p>
+        <p className="text-lg md:text-xl font-bold">
+          Thursday: <span className="text-colr">7am-6pm </span>
+        </p>
+        <p className="text-lg md:text-xl font-bold">
+          Friday: <span className="text-colr">7am-6pm </span>
+        </p>
+        <p className="text-lg md:text-xl font-bold">
+          Saturday: <span className="text-colr">7am-6pm </span>
+        </p>
+        <p className="text-lg md:text-xl pb-5 font-bold">
+          Sunday: <span className="text-colr">7am-3pm </span>
+        </p>
+        <p className="text-lg md:text-xl font-bold pb-2">
+          Phone: <span className="text-colr">(781) 605-1426</span>
+        </p>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=509+Main+St,+Malden,+MA+02148"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=509+Main+St,+Malden,+MA+02148"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex flex-col items-center">
+              <address className="text-lg md:text-xl font-bold">
+                509 Main St, <span className="text-colr">Malden</span>, MA 02148
+              </address>
+              <img className="mr-3 w-30 sm:w-48" src={map} alt="map" />
+            </div>
+          </a>
+        </a>
+
+        <p className="text-center lg:text-4xl  text-zinc-200 font-extralight pb-10 pt-10">
           Take your <span className="text-colr">confidence</span> to the next
           level.
         </p>

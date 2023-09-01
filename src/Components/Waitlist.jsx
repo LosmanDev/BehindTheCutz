@@ -2,7 +2,7 @@ export default function Waitlist() {
   return (
     <div className="flex flex-col items-center justify-center animate-slideIn">
       <h1 className="text-center lg:text-5xl text-3xl text-zinc-200 font-bold pt-28 mb-20 animate-fadeIn">
-        Enter Your <span className="text-colr">Details</span>
+        Join The<span className="text-colr"> Waitlist</span>
       </h1>
       <input
         type="text"
@@ -17,9 +17,9 @@ export default function Waitlist() {
       />
       <button
         type="button"
-        className="animate-fadeIn px-5 py-3 text-base font-medium inline-flex mr-2 mb-2 rounded-lg  text-white text-center bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80"
+        className="animate-fadeIn px-5 py-3 text-base font-medium inline-flex mr-2 mb-2 rounded-lg btn text-white text-center bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80"
       >
-        Join Waitlist
+        Submit
       </button>
     </div>
   );

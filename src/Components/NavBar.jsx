@@ -19,28 +19,28 @@ export default function NavBar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="mr-3 w-30 sm:w-48" src={tiktok} alt="tiktok" />
+          <img className="mr-3 w-30 sm:w-48" src={tiktok} alt="Tiktok" />
         </a>
         <a
           href="https://instagram.com/behindthecutz?igshid=MzRlODBiNWFlZA%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="mr-3 w-30 sm:w-48" src={instagram} alt="instagram" />
+          <img className="mr-3 w-30 sm:w-48" src={instagram} alt="Instagram" />
         </a>
         <a
           href="https://t.snapchat.com/8CMyFjNk"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="mr-3 w-30 sm:w-48" src={snapchat} alt="snapchat" />
+          <img className="mr-3 w-30 sm:w-48" src={snapchat} alt="Snapchat" />
         </a>
         <a
           href="https://youtube.com/@behindthecutz3480?si=AylTgMJEYddqajHX"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img className="mr-3 w-30 sm:w-48" src={youtube} alt="youtube" />
+          <img className="mr-3 w-30 sm:w-48" src={youtube} alt="YouTube" />
         </a>
       </div>
     </div>

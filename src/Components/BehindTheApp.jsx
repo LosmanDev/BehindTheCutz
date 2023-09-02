@@ -12,7 +12,7 @@ export default function BehindTheApp() {
     <Waitlist />
   ) : (
     <div className="animate-fadeIn">
-      <h1 className="text-center lg:text-7xl text-4xl text-zinc-200 font-bold pt-28">
+      <h1 className="text-center lg:text-7xl text-4xl text-zinc-200 font-bold pt-20">
         Behind The <span className="text-colr">Cutz</span>
       </h1>
 
@@ -24,19 +24,7 @@ export default function BehindTheApp() {
           Monday: <span className="text-colr">Closed</span>
         </p>
         <p className="text-lg md:text-xl font-bold">
-          Tuesday: <span className="text-colr">8am-6pm</span>
-        </p>
-        <p className="text-lg md:text-xl font-bold">
-          Wednesday: <span className="text-colr">8am-6pm </span>
-        </p>
-        <p className="text-lg md:text-xl font-bold">
-          Thursday: <span className="text-colr">7am-6pm </span>
-        </p>
-        <p className="text-lg md:text-xl font-bold">
-          Friday: <span className="text-colr">7am-6pm </span>
-        </p>
-        <p className="text-lg md:text-xl font-bold">
-          Saturday: <span className="text-colr">7am-6pm </span>
+          Tue-Sat: <span className="text-colr">7am-6pm</span>
         </p>
         <p className="text-lg md:text-xl pb-5 font-bold">
           Sunday: <span className="text-colr">7am-3pm </span>
@@ -44,23 +32,18 @@ export default function BehindTheApp() {
         <p className="text-lg md:text-xl font-bold pb-2">
           Phone: <span className="text-colr">(781) 605-1426</span>
         </p>
+
         <a
-          href="https://www.google.com/maps/search/?api=1&query=509+Main+St,+Malden,+MA+02148"
+          href="https://maps.apple.com/?address=509+Main+St%2C+Malden%2C+MA++02148%2C+United+States&auid=16012953759820253414&ll=42.428257%2C-71.066889&lsp=9902&q=Fen+Fen%27s+Barber+Shop&t=m"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=509+Main+St,+Malden,+MA+02148"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="flex flex-col items-center">
-              <address className="text-lg md:text-xl font-bold">
-                509 Main St, <span className="text-colr">Malden</span>, MA 02148
-              </address>
-              <img className="mr-3 w-30 sm:w-48" src={map} alt="map" />
-            </div>
-          </a>
+          <div className="flex flex-col items-center">
+            <address className="text-lg md:text-3xl  font-bold">
+              509 Main St, <span className="text-colr">Malden</span>, MA 02148
+            </address>
+            <img className="mr-3 w-30 sm:w-48" src={map} alt="map" />
+          </div>
         </a>
 
         <p className="text-center lg:text-4xl  text-zinc-200 font-extralight pb-10 pt-10">

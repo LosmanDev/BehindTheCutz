@@ -10,7 +10,7 @@ export default function Service() {
   return (
     <>
       <div>
-        <div className="flex flex-wrap flex-row items-center justify-center animate-slideIn pt-20 pb-8">
+        <div className="flex flex-row items-center justify-center animate-slideIn pt-20 pb-8">
           <h1 className="text-center lg:text-5xl text-4xl text-zinc-200 font-bold animate-fadeIn pr-5 ">
             Services
           </h1>
@@ -32,7 +32,7 @@ export default function Service() {
                 </th>
                 <th className="text-zinc-200 font-bold">Service</th>
                 <th className="text-zinc-200 font-bold">Description</th>
-                <th className="text-zinc-200 font-bold">Price</th>
+
                 <th></th>
               </tr>
             </thead>
@@ -64,12 +64,11 @@ export default function Service() {
                     </div>
                     <div>
                       <div className="text-zinc-200 font-bold ">Eyebrows</div>
-                      <div className="text-sm opacity-50 font-bold">$15.00</div>
+                      <div className="text-sm text-zinc-200">$15.00</div>
                     </div>
                   </div>
                 </td>
                 <td className="text-zinc-200 font-bold">Eyebrows</td>
-                <td className="text-zinc-200 font-bold">$15.00</td>
               </tr>
               {/* row 2 */}
               <tr>
@@ -98,12 +97,11 @@ export default function Service() {
                     </div>
                     <div>
                       <div className="text-zinc-200 font-bold">Fade/taper</div>
-                      <div className="text-sm opacity-50 font-bold">$25.00</div>
+                      <div className="text-sm text-zinc-200">$25.00</div>
                     </div>
                   </div>
                 </td>
                 <td className="text-zinc-200 font-bold">Fade/taper</td>
-                <td className="text-zinc-200 font-bold">$25.00</td>
               </tr>
               {/* row 3 */}
               <tr>
@@ -134,12 +132,11 @@ export default function Service() {
                       <div className="text-zinc-200 font-bold">
                         Haircut + beard
                       </div>
-                      <div className="text-sm opacity-50 font-bold">$30.00</div>
+                      <div className="text-sm text-zinc-200">$30.00</div>
                     </div>
                   </div>
                 </td>
                 <td className="text-zinc-200 font-bold">Haircut + beard</td>
-                <td className="text-zinc-200 font-bold">30.00</td>
               </tr>
               {/* row 4 */}
               <tr>
@@ -170,16 +167,13 @@ export default function Service() {
                       <div className="text-zinc-200 font-bold">
                         Haircut + beard + eyebrows
                       </div>
-                      <div className="text-sm opacity-50 font-bold text-zinc-200 ">
-                        $35.00
-                      </div>
+                      <div className="text-sm text-zinc-200 ">$35.00</div>
                     </div>
                   </div>
                 </td>
                 <td className="text-zinc-200 font-bold">
                   Haircut + beard + eyebrows
                 </td>
-                <td className="text-zinc-200 font-bold">$35.00</td>
               </tr>
               <tr>
                 <th>
@@ -209,14 +203,13 @@ export default function Service() {
                       <div className="text-zinc-200 font-bold">
                         Kid&apos;s haircut under 10 yrs
                       </div>
-                      <div className="text-sm opacity-50 font-bold">$15.00</div>
+                      <div className="text-sm text-zinc-200">$15.00</div>
                     </div>
                   </div>
                 </td>
                 <td className="text-zinc-200 font-bold">
                   Kid&apos;s under 10 haircut{" "}
                 </td>
-                <td className="text-zinc-200 font-bold">$15.00</td>
               </tr>
               <tr>
                 <th>
@@ -244,12 +237,11 @@ export default function Service() {
                     </div>
                     <div>
                       <div className="text-zinc-200 font-bold">Lineup</div>
-                      <div className="text-sm opacity-50 font-bold">$15.00</div>
+                      <div className="text-sm text-zinc-200">$15.00</div>
                     </div>
                   </div>
                 </td>
                 <td className="text-zinc-200 font-bold">Lineup </td>
-                <td className="text-zinc-200 font-bold">$15.00</td>
               </tr>
             </tbody>
           </table>

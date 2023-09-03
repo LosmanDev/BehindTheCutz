@@ -28,11 +28,11 @@ export default function Service() {
             <thead>
               <tr>
                 <th>
-                  <label>Select</label>
+                  <label className="text-zinc-200 font-bold">Select</label>
                 </th>
-                <th>Service</th>
-                <th>Description</th>
-                <th>Price</th>
+                <th className="text-zinc-200 font-bold">Service</th>
+                <th className="text-zinc-200 font-bold">Description</th>
+                <th className="text-zinc-200 font-bold">Price</th>
                 <th></th>
               </tr>
             </thead>
@@ -63,13 +63,13 @@ export default function Service() {
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">Eyebrows</div>
+                      <div className="text-zinc-200 font-bold ">Eyebrows</div>
                       <div className="text-sm opacity-50 font-bold">$15.00</div>
                     </div>
                   </div>
                 </td>
-                <td>Eyebrows</td>
-                <td>$15.00</td>
+                <td className="text-zinc-200 font-bold">Eyebrows</td>
+                <td className="text-zinc-200 font-bold">$15.00</td>
               </tr>
               {/* row 2 */}
               <tr>
@@ -97,13 +97,13 @@ export default function Service() {
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">Fade/taper</div>
+                      <div className="text-zinc-200 font-bold">Fade/taper</div>
                       <div className="text-sm opacity-50 font-bold">$25.00</div>
                     </div>
                   </div>
                 </td>
-                <td>Fade/taper</td>
-                <td>$25.00</td>
+                <td className="text-zinc-200 font-bold">Fade/taper</td>
+                <td className="text-zinc-200 font-bold">$25.00</td>
               </tr>
               {/* row 3 */}
               <tr>
@@ -131,13 +131,15 @@ export default function Service() {
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">Haircut + beard</div>
+                      <div className="text-zinc-200 font-bold">
+                        Haircut + beard
+                      </div>
                       <div className="text-sm opacity-50 font-bold">$30.00</div>
                     </div>
                   </div>
                 </td>
-                <td>Haircut + beard</td>
-                <td>30.00</td>
+                <td className="text-zinc-200 font-bold">Haircut + beard</td>
+                <td className="text-zinc-200 font-bold">30.00</td>
               </tr>
               {/* row 4 */}
               <tr>
@@ -165,15 +167,19 @@ export default function Service() {
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">
+                      <div className="text-zinc-200 font-bold">
                         Haircut + beard + eyebrows
                       </div>
-                      <div className="text-sm opacity-50 font-bold">$35.00</div>
+                      <div className="text-sm opacity-50 font-bold text-zinc-200 ">
+                        $35.00
+                      </div>
                     </div>
                   </div>
                 </td>
-                <td>Haircut + beard + eyebrows</td>
-                <td>$35.00</td>
+                <td className="text-zinc-200 font-bold">
+                  Haircut + beard + eyebrows
+                </td>
+                <td className="text-zinc-200 font-bold">$35.00</td>
               </tr>
               <tr>
                 <th>
@@ -200,15 +206,17 @@ export default function Service() {
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">
+                      <div className="text-zinc-200 font-bold">
                         Kid&apos;s haircut under 10 yrs
                       </div>
                       <div className="text-sm opacity-50 font-bold">$15.00</div>
                     </div>
                   </div>
                 </td>
-                <td>Kid&apos;s under 10 haircut </td>
-                <td>$15.00</td>
+                <td className="text-zinc-200 font-bold">
+                  Kid&apos;s under 10 haircut{" "}
+                </td>
+                <td className="text-zinc-200 font-bold">$15.00</td>
               </tr>
               <tr>
                 <th>
@@ -235,13 +243,13 @@ export default function Service() {
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">Lineup</div>
+                      <div className="text-zinc-200 font-bold">Lineup</div>
                       <div className="text-sm opacity-50 font-bold">$15.00</div>
                     </div>
                   </div>
                 </td>
-                <td>Lineup </td>
-                <td>$15.00</td>
+                <td className="text-zinc-200 font-bold">Lineup </td>
+                <td className="text-zinc-200 font-bold">$15.00</td>
               </tr>
             </tbody>
           </table>

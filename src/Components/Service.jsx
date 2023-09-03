@@ -4,19 +4,12 @@ import haircut from "../assets/haircut.png";
 import taper from "../assets/taper.png";
 import blade from "../assets/blade.png";
 import kid from "../assets/kid.png";
+import brow from "../assets/brow.png";
 
 export default function Service() {
   return (
     <>
-      <div
-        className="animate-fadeIn "
-        style={{
-          backgroundColor: "#000",
-          borderRadius: "20px",
-          backgroundPosition: "center",
-          minHeight: "100vh",
-        }}
-      >
+      <div>
         <div className="flex flex-wrap flex-row items-center justify-center animate-slideIn pt-20 pb-8">
           <h1 className="text-center lg:text-5xl text-4xl text-zinc-200 font-bold animate-fadeIn pr-5 ">
             Services
@@ -64,7 +57,7 @@ export default function Service() {
                       <div className="mask mask-squircle w-12 h-12">
                         <img
                           className="mr-5 align-middle"
-                          src={blade}
+                          src={brow}
                           alt="Eyebrow"
                         />
                       </div>
@@ -99,7 +92,7 @@ export default function Service() {
                         <img
                           className="mr-5 align-middle"
                           src={taper}
-                          alt="Eyebrow"
+                          alt="taper"
                         />
                       </div>
                     </div>
@@ -236,8 +229,8 @@ export default function Service() {
                       <div className="mask mask-squircle w-12 h-12">
                         <img
                           className="mr-5 align-middle"
-                          src={taper}
-                          alt="taper"
+                          src={blade}
+                          alt="blade"
                         />
                       </div>
                     </div>

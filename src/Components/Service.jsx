@@ -69,7 +69,7 @@ export default function Service() {
                     </div>
                     <div>
                       <div className="text-zinc-200 font-bold ">Eyebrows</div>
-                      <div className="text-sm text-zinc-200">$15.00</div>
+                      <div className="text-sm text-zinc-200 italic">$15.00</div>
                     </div>
                   </div>
                 </td>
@@ -103,7 +103,7 @@ export default function Service() {
                     </div>
                     <div>
                       <div className="text-zinc-200 font-bold">Fade/taper</div>
-                      <div className="text-sm text-zinc-200">$25.00</div>
+                      <div className="text-sm text-zinc-200 italic">$25.00</div>
                     </div>
                   </div>
                 </td>
@@ -138,7 +138,7 @@ export default function Service() {
                       <div className="text-zinc-200 font-bold">
                         Haircut + beard
                       </div>
-                      <div className="text-sm text-zinc-200">$30.00</div>
+                      <div className="text-sm text-zinc-200 italic">$30.00</div>
                     </div>
                   </div>
                 </td>
@@ -173,7 +173,9 @@ export default function Service() {
                       <div className="text-zinc-200 font-bold">
                         Haircut + beard + eyebrows
                       </div>
-                      <div className="text-sm text-zinc-200 ">$35.00</div>
+                      <div className="text-sm text-zinc-200 italic ">
+                        $35.00
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -206,10 +208,10 @@ export default function Service() {
                       </div>
                     </div>
                     <div>
-                      <div className="text-zinc-200 font-bold">
-                        Kid&apos;s haircut under 10 yrs
+                      <div className="text-zinc-200 font-bold font">
+                        Kid&apos;s haircut
                       </div>
-                      <div className="text-sm text-zinc-200">$15.00</div>
+                      <div className="text-sm text-zinc-200 italic">$15.00</div>
                     </div>
                   </div>
                 </td>
@@ -243,7 +245,7 @@ export default function Service() {
                     </div>
                     <div>
                       <div className="text-zinc-200 font-bold">Lineup</div>
-                      <div className="text-sm text-zinc-200">$15.00</div>
+                      <div className="text-sm text-zinc-200 italic">$15.00</div>
                     </div>
                   </div>
                 </td>

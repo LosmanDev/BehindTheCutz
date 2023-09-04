@@ -21,7 +21,10 @@ export default function Staff() {
         <h1 className="text-center lg:text-5xl text-4xl text-zinc-200 font-bold animate-fadeIn pb-10 pt-20">
           Select<span className="text-colr"> Staff</span>
         </h1>
-        <div className="px-5 mb-5 border border-primary rounded-lg animate-fadeIn">
+        <div
+          style={{ backgroundColor: "#1D232A" }}
+          className="px-5 mb-5 border border-primary rounded-lg animate-fadeIn"
+        >
           <p className="pb-5 font-medium text-zinc-200 pt-4">
             First Available
             <input
@@ -35,7 +38,10 @@ export default function Staff() {
           </p>
         </div>
 
-        <div className="px-10 mb-5 border border-primary rounded-lg animate-fadeIn">
+        <div
+          style={{ backgroundColor: "#1D232A" }}
+          className="px-10 mb-5 border border-primary rounded-lg animate-fadeIn"
+        >
           <p className="pb-5 font-medium text-zinc-200 pt-3">
             Acxonse
             <input

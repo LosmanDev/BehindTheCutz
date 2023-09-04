@@ -16,29 +16,34 @@ export default function Service() {
           </h1>
           <img
             className="align-middle"
-            width={"50px"}
+            width={"35px"}
             src={barber}
             alt="Barbershop pole icon"
           />
         </div>
 
-        <div className="overflow-x-auto text-center animate-slideIn h-screen">
-          <table className="table animate-fadeIn">
+        <div className="overflow-x-auto text-center animate-slideIn h-screen ">
+          <table
+            style={{
+              backgroundColor: "#1D232A",
+            }}
+            className="table animate-fadeIn  "
+          >
             {/* head */}
             <thead>
               <tr>
                 <th>
-                  <label className="text-zinc-200 font-bold">Select</label>
+                  <label className="text-zinc-200 font-bold text-lg">
+                    Select
+                  </label>
                 </th>
-                <th className="text-zinc-200 font-bold">Service</th>
-                <th className="text-zinc-200 font-bold">Description</th>
-
-                <th></th>
+                <th className="text-zinc-200 font-bold text-lg">Service</th>
+                <th className="text-zinc-200 font-bold text-lg">Description</th>
               </tr>
             </thead>
             <tbody>
               {/* row 1 */}
-              <tr>
+              <tr className="btn-outline btn-primary">
                 <th>
                   <label>
                     <input
@@ -70,6 +75,7 @@ export default function Service() {
                 </td>
                 <td className="text-zinc-200 font-bold">Eyebrows</td>
               </tr>
+
               {/* row 2 */}
               <tr>
                 <th>

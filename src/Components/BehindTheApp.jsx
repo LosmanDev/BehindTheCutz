@@ -21,17 +21,17 @@ export default function BehindTheApp() {
           Business <span className="text-colr">Hours</span>
         </h2>
         <p className="text-lg md:text-xl font-bold">
-          Monday: <span className="text-colr">Closed</span>
+          Mon: <span className="text-colr">Closed</span>
         </p>
         <p className="text-lg md:text-xl font-bold">
           Tue-Sat: <span className="text-colr">7am-6pm</span>
         </p>
         <p className="text-lg md:text-xl pb-5 font-bold">
-          Sunday: <span className="text-colr">7am-3pm </span>
+          Sun: <span className="text-colr">7am-3pm </span>
         </p>
-        <p className="text-lg md:text-xl font-bold pb-2">
+        <a href="tel:7816051426" className="text-lg md:text-xl font-bold pb-2">
           Phone: <span className="text-colr">(781) 605-1426</span>
-        </p>
+        </a>
 
         <a
           href="https://maps.apple.com/?address=509+Main+St%2C+Malden%2C+MA++02148%2C+United+States&auid=16012953759820253414&ll=42.428257%2C-71.066889&lsp=9902&q=Fen+Fen%27s+Barber+Shop&t=m"

@@ -23,7 +23,7 @@ export default {
       },
       animation: {
         fadeIn: "fadeIn 2s ease-in-out",
-        slideIn: "slideIn 1s ease-in-out",
+        slideIn: "slideIn .8s ease-in-out",
         fadeUp: "fadeUp 1s ease-in-out",
       },
     },

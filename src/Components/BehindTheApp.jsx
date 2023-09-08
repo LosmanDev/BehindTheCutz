@@ -52,13 +52,13 @@ export default function BehindTheApp() {
         </p>
         <div className="flex flex-row items-center justify-center pb-5">
           <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80"></div>
-          <p className="ml-1 text-zinc-200 font-normal">Waitlist: 1</p>
+          <p className="ml-1 text-zinc-200 font-normal">2 people are waiting</p>
         </div>
         <button
           onClick={handleClick}
           type="button"
           width="100px"
-          className="mr-2 mb-2 btn rounded-lg text-white text-center bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80"
+          className="btn rounded-lg text-white text-center bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

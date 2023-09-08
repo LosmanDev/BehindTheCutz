@@ -23,14 +23,14 @@ export default function Staff() {
         </h1>
         <div
           style={{ backgroundColor: "#1D232A" }}
-          className="px-5 mb-5 border border-primary rounded-lg animate-fadeIn"
+          className="mb-5 border border-primary rounded-lg animate-fadeIn text-center w-full max-w-xs"
         >
-          <p className="pb-5 font-medium text-zinc-200 pt-4">
+          <p className="pb-5 font-medium text-zinc-200 pt-4 ">
             First Available
             <input
               type="radio"
               name="radio-2"
-              className="radio radio-primary align-middle ml-2"
+              className="radio radio-primary align-middle ml-2 "
               value="firstAvailable"
               checked={selectedOption === "firstAvailable"}
               onChange={handleChange}
@@ -40,7 +40,7 @@ export default function Staff() {
 
         <div
           style={{ backgroundColor: "#1D232A" }}
-          className="px-10 mb-5 border border-primary rounded-lg animate-fadeIn"
+          className="mb-5 border border-primary rounded-lg animate-fadeIn text-center w-full max-w-xs"
         >
           <p className="pb-5 font-medium text-zinc-200 pt-3">
             Acxonse

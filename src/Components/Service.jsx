@@ -1,266 +1,119 @@
-import barber from "../assets/barber.png";
 import beard from "../assets/beard.png";
 import haircut from "../assets/haircut.png";
 import taper from "../assets/taper.png";
 import blade from "../assets/blade.png";
 import kid from "../assets/kid.png";
 import brow from "../assets/brow.png";
+import Confirmation from "./Confirmation";
+import { useState } from "react";
 
 export default function Service() {
-  return (
+  const [show, setShow] = useState(false);
+
+  const handleClick = () => {
+    setShow(true);
+  };
+
+  return show ? (
+    <Confirmation />
+  ) : (
     <>
-      <div>
-        <div className="flex flex-row items-center justify-center animate-slideIn pt-20 pb-8">
-          <h1 className="text-center lg:text-5xl text-4xl text-zinc-200 font-bold animate-fadeIn pr-5 ">
-            Services
-          </h1>
-          <img
-            className="align-middle"
-            width={"35px"}
-            src={barber}
-            alt="Barbershop pole icon"
+      <div className="flex flex-row items-center justify-center animate-fadeUp pt-20 pb-8">
+        <h1 className="animate-fadeUp text-center lg:text-5xl text-4xl text-zinc-200 font-bold  pr-5 ">
+          Select <span className="text-colr"> Service</span>
+        </h1>
+      </div>
+      <div className="flex flex-col items-center justify-center animate-fadeUp">
+        <div
+          style={{ backgroundColor: "#1D232A" }}
+          className="animate-fadeIn flex flex-row items-center justify-center border border-primary rounded-lg text-center w-full max-w-xs mb-5"
+        >
+          <img className="p-2" src={brow} alt="Eyebrows" />
+          <p className="font-medium text-zinc-200 p-2">Eyebrows</p>
+          <span className="italic p-2">$15.00</span>
+          <input
+            type="radio"
+            name="radio-2"
+            className="radio radio-primary align-middle p-2"
           />
         </div>
 
-        <div className="overflow-x-auto text-center animate-slideIn h-screen ">
-          <table
-            style={{
-              backgroundColor: "#1D232A",
-            }}
-            className="table animate-fadeIn  "
-          >
-            {/* head */}
-            <thead>
-              <tr>
-                <th>
-                  <label className="text-zinc-200 font-bold text-lg">
-                    Select
-                  </label>
-                </th>
-                <th className="text-zinc-200 font-bold text-lg">Service</th>
-                <th className="text-zinc-200 font-bold text-lg">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* row 1 */}
-              <tr className="btn-outline btn-primary">
-                <th>
-                  <label>
-                    <input
-                      type="radio"
-                      name="radio-2"
-                      className="radio radio-primary text-center mb-2"
-                      value="firstAvailable"
-                      // checked={selectedOption === "firstAvailable"}
-                      // onChange={handleChange}
-                    />
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          className="mr-5 align-middle"
-                          src={brow}
-                          alt="Eyebrow"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-zinc-200 font-bold ">Eyebrows</div>
-                      <div className="text-sm text-zinc-200 italic">$15.00</div>
-                    </div>
-                  </div>
-                </td>
-                <td className="text-zinc-200 font-bold">Eyebrows</td>
-              </tr>
-
-              {/* row 2 */}
-              <tr>
-                <th>
-                  <label>
-                    <input
-                      type="radio"
-                      name="radio-2"
-                      className="radio radio-primary text-center mb-2"
-                      value="firstAvailable"
-                      // checked={selectedOption === "firstAvailable"}
-                      // onChange={handleChange}
-                    />{" "}
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          className="mr-5 align-middle"
-                          src={taper}
-                          alt="taper"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-zinc-200 font-bold">Fade/taper</div>
-                      <div className="text-sm text-zinc-200 italic">$25.00</div>
-                    </div>
-                  </div>
-                </td>
-                <td className="text-zinc-200 font-bold">Fade/taper</td>
-              </tr>
-              {/* row 3 */}
-              <tr>
-                <th>
-                  <label>
-                    <input
-                      type="radio"
-                      name="radio-2"
-                      className="radio radio-primary text-center mb-2"
-                      value="firstAvailable"
-                      // checked={selectedOption === "firstAvailable"}
-                      // onChange={handleChange}
-                    />
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          className="mr-5 align-middle"
-                          src={beard}
-                          alt="beard"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-zinc-200 font-bold">
-                        Haircut + beard
-                      </div>
-                      <div className="text-sm text-zinc-200 italic">$30.00</div>
-                    </div>
-                  </div>
-                </td>
-                <td className="text-zinc-200 font-bold">Haircut + beard</td>
-              </tr>
-              {/* row 4 */}
-              <tr>
-                <th>
-                  <label>
-                    <input
-                      type="radio"
-                      name="radio-2"
-                      className="radio radio-primary text-center mb-2"
-                      value="firstAvailable"
-                      // checked={selectedOption === "firstAvailable"}
-                      // onChange={handleChange}
-                    />
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          className="mr-5 align-middle"
-                          src={haircut}
-                          alt="Eyebrow"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-zinc-200 font-bold">
-                        Haircut + beard + eyebrows
-                      </div>
-                      <div className="text-sm text-zinc-200 italic ">
-                        $35.00
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td className="text-zinc-200 font-bold">
-                  Haircut + beard + eyebrows
-                </td>
-              </tr>
-              <tr>
-                <th>
-                  <label>
-                    <input
-                      type="radio"
-                      name="radio-2"
-                      className="radio radio-primary text-center mb-2"
-                      value="firstAvailable"
-                      // checked={selectedOption === "firstAvailable"}
-                      // onChange={handleChange}
-                    />
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          className="mr-5 align-middle"
-                          src={kid}
-                          alt="Eyebrow"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-zinc-200 font-bold font">
-                        Kid&apos;s haircut
-                      </div>
-                      <div className="text-sm text-zinc-200 italic">$15.00</div>
-                    </div>
-                  </div>
-                </td>
-                <td className="text-zinc-200 font-bold">
-                  Kid&apos;s under 10 haircut{" "}
-                </td>
-              </tr>
-              <tr>
-                <th>
-                  <label>
-                    <input
-                      type="radio"
-                      name="radio-2"
-                      className="radio radio-primary text-center mb-2"
-                      value="firstAvailable"
-                      // checked={selectedOption === "firstAvailable"}
-                      // onChange={handleChange}
-                    />
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          className="mr-5 align-middle"
-                          src={blade}
-                          alt="blade"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-zinc-200 font-bold">Lineup</div>
-                      <div className="text-sm text-zinc-200 italic">$15.00</div>
-                    </div>
-                  </div>
-                </td>
-                <td className="text-zinc-200 font-bold">Lineup </td>
-              </tr>
-            </tbody>
-          </table>
-          <button
-            // onClick={handleClick}
-            type="button"
-            className="mt-10 animate-fadeIn px-5 py-3 text-base font-medium inline-flex mr-2 mb-2 rounded-lg btn text-white text-center bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 sticky top-0"
-          >
-            Next
-          </button>
+        <div
+          style={{ backgroundColor: "#1D232A" }}
+          className="animate-fadeIn flex flex-row items-center justify-center border border-primary rounded-lg  text-center w-full max-w-xs mb-5"
+        >
+          <img className="p-2" src={taper} alt="shaver" />
+          <p className="font-medium text-zinc-200 p-2">Fade/taper</p>
+          <span className="italic p-2">$25.00</span>
+          <input
+            type="radio"
+            name="radio-2"
+            className="radio radio-primary align-middle p-2"
+          />
         </div>
+
+        <div
+          style={{ backgroundColor: "#1D232A" }}
+          className="animate-fadeIn flex flex-row items-center justify-center border border-primary rounded-lg  text-center w-full max-w-xs mb-5"
+        >
+          <img className="p-2" src={beard} alt="beard" />
+          <p className="font-medium text-zinc-200 p-2">Haircut + Beard</p>
+          <span className="italic p-2">$30.00</span>
+          <input
+            type="radio"
+            name="radio-2"
+            className="radio radio-primary align-middle p-2"
+          />
+        </div>
+
+        <div
+          style={{ backgroundColor: "#1D232A" }}
+          className="animate-fadeIn flex flex-row items-center justify-center border border-primary rounded-lg  text-center w-full max-w-xs mb-5"
+        >
+          <img className="p-2" src={haircut} alt="clippers" />
+          <p className="font-medium text-zinc-200 p-2">
+            Haircut + beard + eyebrows
+          </p>
+          <span className="italic p-2">$35.00</span>
+          <input
+            type="radio"
+            name="radio-2"
+            className="radio radio-primary align-middle p-2 m-2"
+          />
+        </div>
+        <div
+          style={{ backgroundColor: "#1D232A" }}
+          className="animate-fadeIn flex flex-row items-center justify-center border border-primary rounded-lg  text-center w-full max-w-xs mb-5"
+        >
+          <img className="p-2" src={kid} alt="kid" />
+          <p className="font-medium text-zinc-200 p-2">Kid&apos;s haircut</p>
+          <span className="italic p-2">$15.00</span>
+          <input
+            type="radio"
+            name="radio-2"
+            className="radio radio-primary align-middle p-2"
+          />
+        </div>
+        <div
+          style={{ backgroundColor: "#1D232A" }}
+          className="animate-fadeIn flex flex-row items-center justify-center border border-primary rounded-lg  text-center w-full max-w-xs mb-5"
+        >
+          <img className="p-2" src={blade} alt="blade" />
+          <p className="font-medium text-zinc-200 p-2">Lineup</p>
+          <span className="italic p-2">$15.00</span>
+          <input
+            type="radio"
+            name="radio-2"
+            className="radio radio-primary align-middle p-2"
+          />
+        </div>
+        <button
+          onClick={handleClick}
+          type="button"
+          className="mt-10  px-5 py-3 text-base font-medium inline-flex mr-2 mb-2 rounded-lg btn text-white text-center bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 sticky top-0"
+        >
+          Next
+        </button>
       </div>
     </>
   );

@@ -29,7 +29,7 @@ export default function BehindTheApp() {
         <p className="text-lg md:text-xl pb-5 font-bold">
           Sun: <span className="text-colr">7am-3pm </span>
         </p>
-        <a href="tel:7816051426" className="text-lg md:text-xl font-bold pb-2">
+        <a href="tel:7816051426" className="text-lg md:text-xl font-bold">
           Phone: <span className="text-colr">(781) 605-1426</span>
         </a>
 
@@ -38,7 +38,7 @@ export default function BehindTheApp() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center pt-5">
             <address className="text-lg md:text-3xl  font-bold">
               509 Main St, <span className="text-colr">Malden</span>, MA 02148
             </address>
@@ -50,7 +50,10 @@ export default function BehindTheApp() {
           Take your <span className="text-colr">confidence</span> to the next
           level.
         </p>
-
+        <div className="flex flex-row items-center justify-center pb-5">
+          <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80"></div>
+          <p className="ml-1 text-zinc-200 font-normal">Waitlist: 1</p>
+        </div>
         <button
           onClick={handleClick}
           type="button"

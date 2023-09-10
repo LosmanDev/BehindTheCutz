@@ -1,12 +1,17 @@
 import check from "../assets/check.png";
 import { useState } from "react";
+// import { useEffect } from "react";
 
 export default function Confirmation() {
   const [place, setPlace] = useState(2);
   const [wait, setWait] = useState("65 - 85");
+
   return (
     <>
-      <div className="animate-fadeUp">
+      <div
+        style={{ backgroundColor: "black", height: "100%" }}
+        className="animate-fadeIn"
+      >
         <div className="flex flex-col items-center justify-center pt-20 text-center animate-fadeIn">
           <img src={check} alt="check mark" />
 

@@ -12,7 +12,7 @@ export default function BehindTheApp() {
     <Waitlist />
   ) : (
     <div className="animate-fadeIn">
-      <h1 className="text-center lg:text-7xl text-4xl text-zinc-200 font-bold pt-20">
+      <h1 className="text-center lg:text-7xl text-4xl text-zinc-200 font-bold pt-15">
         Behind The <span className="text-colr">Cutz</span>
       </h1>
 

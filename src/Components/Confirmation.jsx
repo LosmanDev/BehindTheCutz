@@ -1,6 +1,5 @@
 import check from "../assets/check.png";
 import { useState } from "react";
-// import { useEffect } from "react";
 
 export default function Confirmation() {
   const [place, setPlace] = useState(2);
@@ -12,7 +11,7 @@ export default function Confirmation() {
         style={{ backgroundColor: "black", height: "100%" }}
         className="animate-fadeIn"
       >
-        <div className="flex flex-col items-center justify-center pt-20 text-center animate-fadeIn">
+        <div className="flex flex-col items-center justify-center pt-15 text-center animate-fadeIn">
           <img src={check} alt="check mark" />
 
           <div className="flex flex-row items-center justify-center pt-5 ">

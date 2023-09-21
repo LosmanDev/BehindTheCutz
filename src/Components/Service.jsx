@@ -18,12 +18,12 @@ export default function Service() {
     <Confirmation />
   ) : (
     <>
-      <div className="flex flex-row items-center justify-center animate-fadeUp pt-20 pb-8">
+      <div className="flex flex-row items-center justify-center animate-fadeDown pt-15 pb-8">
         <h1 className="animate-fadeIn text-center lg:text-5xl text-4xl text-zinc-200 font-bold  pr-5 ">
           Select <span className="text-colr"> Service</span>
         </h1>
       </div>
-      <div className="flex flex-col items-center justify-center animate-fadeUp">
+      <div className="flex flex-col items-center justify-center animate-fadeDown">
         <div
           style={{ backgroundColor: "#1D232A" }}
           className="animate-fadeIn flex flex-row items-center justify-center border border-primary rounded-lg text-center w-full max-w-xs mb-5"

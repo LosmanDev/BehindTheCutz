@@ -12,24 +12,24 @@ export default function BehindTheApp() {
     <Waitlist />
   ) : (
     <div className="animate-fadeIn">
-      <h1 className="text-center lg:text-7xl text-4xl text-zinc-200 font-bold pt-15">
+      <h1 className="text-center lg:text-7xl text-3xl text-zinc-200 font-bold pt-20">
         Behind The <span className="text-colr">Cutz</span>
       </h1>
 
-      <div className="text-center" style={{ paddingTop: "50px" }}>
-        <h2 className="lg:text-3xl text-2xl text-center pb-2">
+      <div className="text-center mt-8">
+        <h2 className="lg:text-3xl text-1xl text-center pb-2">
           Business <span className="text-colr">Hours</span>
         </h2>
-        <p className="text-lg md:text-xl font-bold">
+        <p className="text-sm md:text-xl font-bold">
           Mon: <span className="text-colr">Closed</span>
         </p>
-        <p className="text-lg md:text-xl font-bold">
+        <p className="text-sm md:text-xl font-bold">
           Tue-Sat: <span className="text-colr">7am-6pm</span>
         </p>
-        <p className="text-lg md:text-xl pb-5 font-bold">
+        <p className="text-sm md:text-xl pb-3 font-bold">
           Sun: <span className="text-colr">7am-3pm </span>
         </p>
-        <a href="tel:7816051426" className="text-lg md:text-xl font-bold">
+        <a href="tel:7816051426" className="text-md md:text-xl font-bold">
           Phone: <span className="text-colr">(781) 605-1426</span>
         </a>
 
@@ -39,14 +39,14 @@ export default function BehindTheApp() {
           rel="noopener noreferrer"
         >
           <div className="flex flex-col items-center pt-5">
-            <address className="text-lg md:text-3xl  font-bold">
+            <address className="text-lg md:text-3xl pt-2 font-bold">
               509 Main St, <span className="text-colr">Malden</span>, MA 02148
             </address>
             <img className="mr-3 w-30 sm:w-48" src={map} alt="map" />
           </div>
         </a>
 
-        <p className="text-center lg:text-4xl  text-zinc-200 font-extralight pb-10 pt-10">
+        <p className="text-center lg:text-4xl  text-zinc-200 font-extralight pb-5 pt-5">
           Take your <span className="text-colr">confidence</span> to the next
           level.
         </p>

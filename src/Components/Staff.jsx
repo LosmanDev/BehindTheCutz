@@ -18,7 +18,7 @@ export default function Staff() {
   ) : (
     <>
       <div className="flex flex-col items-center justify-center animate-slideIn">
-        <h1 className="text-center lg:text-5xl text-4xl text-zinc-200 font-bold animate-fadeIn pb-10 pt-20">
+        <h1 className="text-center lg:text-7xl text-3xl text-zinc-200 font-bold animate-fadeIn pb-8 pt-20">
           Select<span className="text-colr"> Staff</span>
         </h1>
         <div
@@ -58,7 +58,7 @@ export default function Staff() {
         <button
           onClick={handleClick}
           type="button"
-          className="mt-10 animate-fadeIn px-5 py-3 text-base font-medium inline-flex mr-2 mb-2 rounded-lg btn text-white text-center bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80"
+          className="mt-8 animate-fadeIn px-5 py-3 text-base font-medium inline-flex mr-2 mb-2 rounded-lg btn text-white text-center bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80"
         >
           Next
         </button>

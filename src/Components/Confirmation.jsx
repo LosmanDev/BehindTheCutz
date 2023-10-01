@@ -3,9 +3,11 @@ import { useState } from "react";
 
 export default function Confirmation() {
   const [place, setPlace] = useState(2);
-  const [wait, setWait] = useState("65 - 85");
-  // setPlace(2);
-  // setWait("65-85");
+
+  const handleClick = () => {
+    location.reload();
+  };
+
   return (
     <>
       <div
@@ -33,10 +35,6 @@ export default function Confirmation() {
             <p className="text-zinc-200 font-medium">Place in Line</p>
             <span className=" font-semibold text-lg">{place}</span>
           </div>
-          <div className="flex flex-col items-center">
-            <p className="text-zinc-200 font-medium">Estimated Wait:</p>
-            <span className="font-semibold text-lg">{wait} min</span>
-          </div>
         </div>
         <div className="flex flex-col items-center justify-center text-center pt-5 animate-fadeIn">
           <hr />
@@ -49,6 +47,7 @@ export default function Confirmation() {
           <p className="text-zinc-200 font-medium">Services</p>
           <p className=" font-medium pb-3">Eyebrows</p>
           <button
+            onClick={handleClick}
             type="button"
             className="mt-10 animate-fadeIn px-5 py-3 text-base font-medium inline-flex rounded-lg btn text-white text-center bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80"
           >

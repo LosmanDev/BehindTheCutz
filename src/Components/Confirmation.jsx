@@ -4,12 +4,13 @@ import { useState } from "react";
 export default function Confirmation() {
   const [place, setPlace] = useState(2);
   const [wait, setWait] = useState("65 - 85");
-
+  // setPlace(2);
+  // setWait("65-85");
   return (
     <>
       <div
         style={{ backgroundColor: "black", height: "100%" }}
-        className="animate-fadeIn"
+        className="animate-fadeIn pb-28"
       >
         <div className="flex flex-col items-center justify-center pt-15 text-center animate-fadeIn">
           <img src={check} alt="check mark" />

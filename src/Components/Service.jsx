@@ -23,7 +23,7 @@ export default function Service() {
           Select <span className="text-colr"> Service</span>
         </h1>
       </div>
-      <div className="flex flex-col items-center justify-center animate-fadeDown">
+      <div className="flex flex-col items-center justify-center animate-fadeDown mb-28">
         <div
           style={{ backgroundColor: "#1D232A" }}
           className="animate-fadeIn flex flex-row items-center justify-center border border-primary rounded-lg text-center w-full max-w-xs mb-5"

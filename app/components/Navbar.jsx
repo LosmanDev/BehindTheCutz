@@ -4,8 +4,12 @@ export default function Navbar() {
   return (
     <div className="navbar bg-ghost">
       <div className="navbar-start">
-        <a>
-          <Image src={logo} className="h-16 w-16" />
+        <a href="/">
+          <Image
+            src={logo}
+            alt="logo for behind the cuts is a movie clipboard with the barber logo"
+            className="h-16 w-20"
+          />
         </a>
       </div>
 
@@ -80,10 +84,10 @@ export default function Navbar() {
                   gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#fd5" />
-                  <stop offset=".1" stop-color="#fd5" />
-                  <stop offset=".5" stop-color="#ff543e" />
-                  <stop offset="1" stop-color="#c837ab" />
+                  <stop stopColor="#fd5" />
+                  <stop offset=".1" stopColor="#fd5" />
+                  <stop offset=".5" stopColor="#ff543e" />
+                  <stop offset="1" stopColor="#c837ab" />
                 </radialGradient>
                 <radialGradient
                   id="skillIconsInstagram1"
@@ -93,9 +97,9 @@ export default function Navbar() {
                   gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#3771c8" />
-                  <stop offset=".128" stop-color="#3771c8" />
-                  <stop offset="1" stop-color="#60f" stop-opacity="0" />
+                  <stop stopColor="#3771c8" />
+                  <stop offset=".128" stopColor="#3771c8" />
+                  <stop offset="1" stopColor="#60f" stopOpacity="0" />
                 </radialGradient>
               </defs>
             </g>

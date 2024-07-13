@@ -1,4 +1,5 @@
 import { AppProvider } from './context/AppContext';
+import Navbar from './components/Navbar';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
+        <Navbar />
         <AppProvider>{children}</AppProvider>
       </body>
     </html>

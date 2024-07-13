@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Welcome() {
   return (
     <>
-      <div className="min-h-screen flex flex-col justify-center items-center gap-4">
+      <div className="mt-10 flex flex-col justify-center items-center gap-4">
         <h1 className="text-2xl font-bold text-center">
           Welcome
           <br />

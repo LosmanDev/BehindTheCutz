@@ -35,21 +35,20 @@ export default function Service() {
             key={index}
             onClick={() => {
               setSelectedService(service);
-              console.log('Selected service:', service);
             }}
-            className="flex flex-col items-center justify-between p-4 border-2 border-primary rounded-lg hover:bg-primary/10 transition-colors duration-300 h-25 w-full"
+            className="flex flex-col items-center justify-between p-2 border-2 border-primary rounded-lg hover:bg-primary/10 transition-colors duration-300 h-25 w-full"
           >
             <div className="flex items-center justify-center w-full">
               <Image
                 src={service.icon}
-                alt={service.name}
-                className="w-8 h-8 mr-2"
+                alt={`Icon for selected haircut service${service.icon}`}
+                className="w-8 h-8 mr-2 mt-2"
               />
-              <span className="text-lg">{service.name}</span>
+              <span className="text-sm">{service.name}</span>
             </div>
-            <span className="text-xl mt-2">{service.price}</span>
+            <span className="text-xs mt-2 font-medium">{service.price}</span>
             {service.note && (
-              <span className="text-slate-500 text-xs mt-1 text-center">
+              <span className="text-slate-500 text-xs mt-2 text-center">
                 {service.note}
               </span>
             )}

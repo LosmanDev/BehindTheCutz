@@ -6,7 +6,7 @@ export default function Staff() {
   const { setSelectedStaff } = useAppContext();
   return (
     <>
-      <div className="pt-10 flex flex-col justify-center items-center gap-4">
+      <div className="mt-10 flex flex-col justify-center items-center gap-4">
         <h1 className="text-2xl text-center">Select Staff</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl w-full place-items-center">
           <Link

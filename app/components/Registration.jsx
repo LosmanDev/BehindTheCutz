@@ -3,15 +3,29 @@ import { useAppContext } from '../context/AppContext';
 import Link from 'next/link';
 
 export default function Registration() {
-  const { userDetails, setUserDetails } = useAppContext();
+  const { userDetails, setUserDetails, saveBooking } = useAppContext();
 
   const handleInputChange = (e) => {
     setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const result = await saveBooking();
+
+    if (result.success) {
+      window.location.href = '/waitlist';
+    } else {
+      alert(`Failed to Save Booking:${result.error}`);
+    }
+  };
+
   return (
     <>
-      <div className="pt-10 flex flex-col gap-8 justify-center items-center p-4">
+      <form
+        onSubmit={handleSubmit}
+        className="mt-10 flex flex-col gap-8 justify-center items-center p-4"
+      >
         <h1 className="text-2xl">Enter your details</h1>
 
         <label className="input input-bordered border-primary flex items-center gap-2">
@@ -37,10 +51,10 @@ export default function Registration() {
           />
         </label>
 
-        <Link href="/waitlist" className="btn border-primary px-16">
+        <button type="submit" className="btn border-primary px-16">
           Join The Line
-        </Link>
-      </div>
+        </button>
+      </form>
     </>
   );
 }

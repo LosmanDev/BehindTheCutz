@@ -23,23 +23,38 @@ export default function Registration() {
   return (
     <>
       <form
+        data-aos="fade-right"
+        data-aos-delay="0"
         onSubmit={handleSubmit}
         className="mt-10 flex flex-col gap-8 justify-center items-center p-4"
       >
-        <h1 className="text-2xl">Enter your details</h1>
+        <h1 data-aos="fade-right" data-aos-delay="0" className="text-2xl">
+          Enter your{' '}
+          <span className="bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold">
+            Details
+          </span>
+        </h1>
 
-        <label className="input input-bordered border-primary flex items-center gap-2">
+        <label
+          data-aos="fade-right"
+          data-aos-delay="200"
+          className="shadow-[#000dffb3] shadow-lg input input-bordered border-primary flex items-center gap-2"
+        >
           Name
           <input
             type="text"
             name="name"
             className="grow"
-            placeholder="John Doe"
+            placeholder="Enter your name"
             value={userDetails.name}
             onChange={handleInputChange}
           />
         </label>
-        <label className="input input-bordered border-primary flex items-center gap-2">
+        <label
+          data-aos="fade-right"
+          data-aos-delay="400"
+          className="shadow-[#000dffb3] shadow-lg input input-bordered border-primary flex items-center gap-2"
+        >
           Phone
           <input
             type="number"
@@ -51,7 +66,12 @@ export default function Registration() {
           />
         </label>
 
-        <button type="submit" className="btn border-primary px-16">
+        <button
+          data-aos="fade-right"
+          data-aos-delay="800"
+          type="submit"
+          className="shadow-[#000dffb3] shadow-lg btn border-primary px-16"
+        >
           Join The Line
         </button>
       </form>

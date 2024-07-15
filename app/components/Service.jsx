@@ -26,9 +26,18 @@ export default function Service() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center p-10 mx-auto">
-      <h1 className="text-2xl mb-8">Select Service</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl w-full">
+    <div className="flex flex-col justify-center items-center p-10 mx-auto">
+      <h1 data-aos="fade-right" data-aos-delay="0" className="text-2xl mb-8">
+        Select{' '}
+        <span className="bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold">
+          Service
+        </span>
+      </h1>
+      <div
+        data-aos="fade-right"
+        data-aos-delay="200"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-2xl w-full"
+      >
         {services.map((service, index) => (
           <Link
             href="/staff"
@@ -36,7 +45,7 @@ export default function Service() {
             onClick={() => {
               setSelectedService(service);
             }}
-            className="flex flex-col items-center justify-between p-2 border-2 border-primary rounded-lg hover:bg-primary/10 transition-colors duration-300 h-25 w-full"
+            className="shadow-[#000dffb3] shadow-lg flex flex-col items-center justify-between p-2 border-2 border-primary rounded-lg hover:bg-primary/10 transition-colors duration-300 h-20 w-full"
           >
             <div className="flex items-center justify-center w-full">
               <Image
@@ -44,14 +53,16 @@ export default function Service() {
                 alt={`Icon for selected haircut service${service.icon}`}
                 className="w-8 h-8 mr-2 mt-2"
               />
-              <span className="text-sm">{service.name}</span>
+              <span className="text-sm">
+                {service.name} <br />
+                {service.note && (
+                  <span className="text-slate-500 text-xs text-center">
+                    {service.note}
+                  </span>
+                )}{' '}
+              </span>
             </div>
             <span className="text-xs mt-2 font-medium">{service.price}</span>
-            {service.note && (
-              <span className="text-slate-500 text-xs mt-2 text-center">
-                {service.note}
-              </span>
-            )}
           </Link>
         ))}
       </div>

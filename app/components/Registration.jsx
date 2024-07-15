@@ -1,6 +1,5 @@
 'use client';
 import { useAppContext } from '../context/AppContext';
-import Link from 'next/link';
 
 export default function Registration() {
   const { userDetails, setUserDetails, saveBooking } = useAppContext();
@@ -14,9 +13,10 @@ export default function Registration() {
     const result = await saveBooking();
 
     if (result.success) {
-      window.location.href = '/waitlist';
+      localStorage.setItem('lastWaitlist', JSON.stringify(result.data));
+      window.location.href = `/waitlist?id=${result.data.id}`;
     } else {
-      alert(`Failed to Save Booking:${result.error}`);
+      alert(`Failed to join waitlist:${result.error}`);
     }
   };
 

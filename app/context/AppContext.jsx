@@ -23,7 +23,7 @@ export function AppProvider({ children }) {
     }
 
     const { data, error } = await supabase
-      .from('bookings')
+      .from('waitlist')
       .insert([
         {
           name: userDetails.name,
@@ -32,14 +32,14 @@ export function AppProvider({ children }) {
           staff: selectedStaff,
         },
       ])
-      .select('*, position, created_at');
+      .select();
 
     if (error) {
       console.log('Error saving booking:', error);
       return { success: false, error: error.message };
     } else {
       console.log('Booking Saved Succesfully:', data);
-      return { success: true, data };
+      return { success: true, data: data[0] };
     }
   };
 

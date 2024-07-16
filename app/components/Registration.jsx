@@ -1,5 +1,6 @@
 'use client';
 import { useAppContext } from '../context/AppContext';
+import Navbar from './Navbar';
 
 export default function Registration() {
   const { userDetails, setUserDetails, saveBooking } = useAppContext();
@@ -22,6 +23,7 @@ export default function Registration() {
 
   return (
     <>
+      <Navbar />
       <form
         data-aos="fade-right"
         data-aos-delay="0"

@@ -13,12 +13,12 @@ export default function Navbar() {
         </a>
       </div>
 
-      <div className="navbar-end gap-2">
+      <div className="navbar-end gap-3">
         <a href="https://t.snapchat.com/8CMyFjNk" target="_blank">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="1.5em"
-            height="1.5em"
+            width="1.8em"
+            height="1.8em"
             viewBox="-2 -2.5 24 24"
           >
             <path
@@ -33,8 +33,8 @@ export default function Navbar() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="1.5em"
-            height="1.5em"
+            width="1.8em"
+            height="1.8em"
             viewBox="0 0 256 290"
           >
             <path
@@ -54,8 +54,8 @@ export default function Navbar() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="1.5em"
-            height="1.5em"
+            width="1.8em"
+            height="1.8em"
             viewBox="0 0 256 256"
           >
             <g fill="none">
@@ -111,7 +111,7 @@ export default function Navbar() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="1.8em"
+            width="2em"
             height="1.8em"
             viewBox="0 0 256 180"
           >

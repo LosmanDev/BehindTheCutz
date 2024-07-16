@@ -3,6 +3,7 @@ import Welcome from './components/Welcome';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Navbar from './components/Navbar';
 
 export default function Home() {
   useEffect(() => {
@@ -14,7 +15,10 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Welcome />
+      <div className="gif">
+        <Navbar />
+        <Welcome />
+      </div>
     </>
   );
 }

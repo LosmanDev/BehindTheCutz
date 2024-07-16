@@ -1,11 +1,13 @@
 'use client';
 import { useAppContext } from '../context/AppContext';
 import Link from 'next/link';
+import Navbar from './Navbar';
 
 export default function Staff() {
   const { setSelectedStaff } = useAppContext();
   return (
     <>
+      <Navbar />
       <div className="mt-10 flex flex-col justify-center items-center gap-4">
         <h1
           data-aos="fade-right"

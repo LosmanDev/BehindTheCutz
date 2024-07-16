@@ -28,7 +28,7 @@ export default function Welcome() {
         <h1
           data-aos="fade-down"
           data-aos-delay="0"
-          className="text-2xl font-bold text-center"
+          className="text-3xl font-bold text-center"
         >
           Welcome
           <br />
@@ -41,7 +41,7 @@ export default function Welcome() {
         <h2
           data-aos="fade-down"
           data-aos-delay="200"
-          className=" text-1xl text-center pb-2"
+          className=" text-2xl text-center pb-2"
         >
           Business{' '}
           <span className="bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold">
@@ -51,7 +51,7 @@ export default function Welcome() {
         <p
           data-aos="fade-down"
           data-aos-delay="300"
-          className="text-sm font-bold"
+          className="text-base font-bold"
         >
           Mon:{' '}
           <span className="bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold">
@@ -61,7 +61,7 @@ export default function Welcome() {
         <p
           data-aos="fade-down"
           data-aos-delay="400"
-          className="text-sm font-bold"
+          className="text-base font-bold"
         >
           Tue-Sat:{' '}
           <span className="bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold">
@@ -71,7 +71,7 @@ export default function Welcome() {
         <p
           data-aos="fade-down"
           data-aos-delay="500"
-          className="text-sm pb-3 font-bold"
+          className="text-base pb-3 font-bold"
         >
           Sun:{' '}
           <span className="bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold">
@@ -82,7 +82,7 @@ export default function Welcome() {
           data-aos="fade-down"
           data-aos-delay="600"
           href="tel:7816051426"
-          className="text-md"
+          className="text-base"
         >
           Phone:{' '}
           <span className="bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold">
@@ -99,7 +99,7 @@ export default function Welcome() {
             data-aos-delay="700"
             className="flex flex-col items-center"
           >
-            <address className="text-sm">
+            <address className="text-base">
               509 Main St Malden, MA{' '}
               <span className="bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold">
                 02148

@@ -2,51 +2,13 @@
 import { createClient } from '../utils/supabase/client';
 import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
+import { useRouter } from 'next/navigation';
 
 export default function Waitlist() {
   const [waitlist, setWaitlist] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  // useEffect(() => {
-  //   console.log('running');
-  //   const fetchBookingDetails = async () => {
-  //     //Check local storage for saved waitlist
-  //     const storedWaitlist = localStorage.getItem('lastWaitlist');
-
-  //     if (storedWaitlist) {
-  //       setWaitlist(JSON.parse(storedWaitlist));
-  //       setLoading(false);
-  //       return;
-  //     }
-
-  //     //Pulled from Database
-  //     const supabase = createClient();
-  //     const urlParams = new URLSearchParams(window.location.search);
-  //     const waitlistId = urlParams.get('id');
-
-  //     if (!waitlistId) {
-  //       setError('No Waitlist ID provided');
-  //       setLoading(false);
-  //       return;
-  //     }
-
-  //     const { data, error } = await supabase
-  //       .from('waitlist')
-  //       .select('id, name, phone, service, staff, created_at, position')
-  //       .eq('id', waitlistId)
-  //       .single();
-
-  //     if (error) {
-  //       setError('Failed to fetch waitlist details');
-  //       setLoading(false);
-  //     } else {
-  //       setWaitlist(data);
-  //       setLoading(false);
-  //     }
-  //   };
-  //   fetchBookingDetails();
-  // }, []);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchBookingDetails = async () => {
@@ -96,6 +58,32 @@ export default function Waitlist() {
     fetchBookingDetails();
   }, []);
 
+  const handleRemoveBooking = async () => {
+    if (!waitlist || !waitlist.id) {
+      setError('No booking to remove');
+      return;
+    }
+
+    const supabase = createClient();
+    const { error } = await supabase
+      .from('waitlist')
+      .delete()
+      .eq('id', waitlist.id);
+
+    if (error) {
+      setError('Failed to remove booking: ' + error.message);
+    } else {
+      // Remove from local storage
+      localStorage.removeItem('lastWaitlist');
+      localStorage.removeItem('cachedWaitlist');
+      localStorage.removeItem('cacheTime');
+
+      // Redirect to home page or show a success message
+      alert('Booking removed successfully');
+      router.push('/'); // Redirect to home page
+    }
+  };
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!waitlist) return <div>No booking found</div>;
@@ -135,7 +123,14 @@ export default function Waitlist() {
               hour12: true,
             })}
           </p>
+          <button
+            onClick={handleRemoveBooking}
+            className="mt-4 shadow-[#ff1e00e9] shadow-sm btn border-error px-16"
+          >
+            Remove Booking
+          </button>
         </div>
+        {error && <div className="text-red-500">{error}</div>}
       </div>
     </>
   );

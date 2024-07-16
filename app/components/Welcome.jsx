@@ -139,7 +139,7 @@ export default function Welcome() {
 
         <Link
           data-aos="fade-down"
-          data-aos-delay="1000"
+          data-aos-delay="800"
           href="/service"
           className="btn border-primary mt-2 px-16 shadow-[#000dffb3] shadow-lg"
         >

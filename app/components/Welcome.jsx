@@ -118,11 +118,7 @@ export default function Welcome() {
         </Link>
 
         {waitlistCount > 0 ? (
-          <div
-            data-aos="fade-down"
-            data-aos-delay="800"
-            className="flex flex-row items-center justify-center mb-10"
-          >
+          <div className="flex flex-row items-center justify-center mb-10">
             <div
               style={{ boxShadow: '0 0 10px rgba(0, 255, 0, 0.7)' }}
               className="w-3 h-3 rounded-full bg-green-500"
@@ -133,11 +129,7 @@ export default function Welcome() {
             </p>
           </div>
         ) : (
-          <div
-            data-aos="fade-down"
-            data-aos-delay="800"
-            className="flex flex-row items-center justify-center mb-10"
-          >
+          <div className="flex flex-row items-center justify-center mb-10">
             <div
               style={{ boxShadow: '0 0 10px rgba(255, 0, 0, 0.7)' }}
               className="w-3 h-3 rounded-full bg-red-500"

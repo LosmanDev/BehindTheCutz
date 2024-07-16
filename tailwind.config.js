@@ -34,7 +34,7 @@ module.exports = {
 
           warning: '#ff6800',
 
-          error: '#ff004d',
+          error: '#ff1e00e9',
         },
       },
     ],

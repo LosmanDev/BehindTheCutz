@@ -11,7 +11,7 @@ export default function Welcome() {
       const supabase = createClient();
       const { count, error } = await supabase
         .from('waitlist')
-        .select('*', { count: 'exact' });
+        .select('*', { count: 'exact', head: true });
 
       if (error) {
         console.log('Error fetching waitlist count:', error);
@@ -108,11 +108,20 @@ export default function Welcome() {
           </div>
         </a>
 
+        <Link
+          data-aos="fade-down"
+          data-aos-delay="800"
+          href="/service"
+          className="btn border-primary px-16 shadow-[#000dffb3] shadow-lg mb-2"
+        >
+          Join Waitlist
+        </Link>
+
         {waitlistCount > 0 ? (
           <div
             data-aos="fade-down"
             data-aos-delay="800"
-            className="flex flex-row items-center justify-center mt-5"
+            className="flex flex-row items-center justify-center"
           >
             <div
               style={{ boxShadow: '0 0 10px rgba(0, 255, 0, 0.7)' }}
@@ -127,7 +136,7 @@ export default function Welcome() {
           <div
             data-aos="fade-down"
             data-aos-delay="800"
-            className="flex flex-row items-center justify-center mt-5"
+            className="flex flex-row items-center justify-center"
           >
             <div
               style={{ boxShadow: '0 0 10px rgba(255, 0, 0, 0.7)' }}
@@ -136,15 +145,6 @@ export default function Welcome() {
             <p className="ml-1 text-zinc-200 font-normal">No one is waiting</p>
           </div>
         )}
-
-        <Link
-          data-aos="fade-down"
-          data-aos-delay="800"
-          href="/service"
-          className="btn border-primary mt-2 px-16 shadow-[#000dffb3] shadow-lg"
-        >
-          Join Waitlist
-        </Link>
       </div>
     </>
   );

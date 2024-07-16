@@ -1,5 +1,4 @@
 import { AppProvider } from './context/AppContext';
-
 import { Poppins } from 'next/font/google';
 import './globals.css';
 

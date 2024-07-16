@@ -22,22 +22,6 @@ export default function Waitlist() {
         return;
       }
 
-      // Check if we have cached data and it's less than 5 minutes old
-      const cachedData = localStorage.getItem('cachedWaitlist');
-      const cacheTime = localStorage.getItem('cacheTime');
-      const now = new Date().getTime();
-
-      if (
-        cachedData &&
-        cacheTime &&
-        now - parseInt(cacheTime) < 5 * 60 * 1000
-      ) {
-        setWaitlist(JSON.parse(cachedData));
-        setLoading(false);
-        return;
-      }
-
-      // If no recent cache, fetch from database
       const { data, error } = await supabase
         .from('waitlist')
         .select('id, name, phone, service, staff, created_at, position')
@@ -49,9 +33,7 @@ export default function Waitlist() {
         setLoading(false);
       } else {
         setWaitlist(data);
-        // Cache the new data
-        localStorage.setItem('cachedWaitlist', JSON.stringify(data));
-        localStorage.setItem('cacheTime', now.toString());
+
         setLoading(false);
       }
     };
@@ -93,7 +75,7 @@ export default function Waitlist() {
       <Navbar />
       <div className="mt-10 flex flex-col gap-8 justify-center items-center p-4">
         <h1 className="text-2xl">Booking Receipt</h1>
-        <div className="border-2 border-primary rounded-lg p-6 w-full max-w-md">
+        <div className="border-2 border-primary rounded-lg p-6 w-full max-w-md shadow-[#000dffb3] shadow-lg">
           <p>
             <strong>Name:</strong> {waitlist.name}
           </p>
@@ -125,9 +107,9 @@ export default function Waitlist() {
           </p>
           <button
             onClick={handleRemoveBooking}
-            className="mt-4 shadow-[#ff1e00e9] shadow-sm btn border-error px-16"
+            className="mt-4 shadow-[#ff1e00e9] shadow-md border-error btn px-8"
           >
-            Remove Booking
+            Leave Waitlist
           </button>
         </div>
         {error && <div className="text-red-500">{error}</div>}

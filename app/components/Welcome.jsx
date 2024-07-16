@@ -121,7 +121,7 @@ export default function Welcome() {
           <div
             data-aos="fade-down"
             data-aos-delay="800"
-            className="flex flex-row items-center justify-center"
+            className="flex flex-row items-center justify-center mb-10"
           >
             <div
               style={{ boxShadow: '0 0 10px rgba(0, 255, 0, 0.7)' }}
@@ -136,7 +136,7 @@ export default function Welcome() {
           <div
             data-aos="fade-down"
             data-aos-delay="800"
-            className="flex flex-row items-center justify-center"
+            className="flex flex-row items-center justify-center mb-10"
           >
             <div
               style={{ boxShadow: '0 0 10px rgba(255, 0, 0, 0.7)' }}

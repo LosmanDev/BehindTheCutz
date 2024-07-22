@@ -74,7 +74,7 @@ export default function Waitlist() {
     <>
       <Navbar />
       <div className="mt-10 flex flex-col gap-8 justify-center items-center p-4">
-        <h1 className="text-2xl">Booking Receipt</h1>
+        <h1 className="text-2xl">Waitlist Confirmation</h1>
         <div className="border-2 border-primary rounded-lg p-6 w-full max-w-md shadow-[#000dffb3] shadow-lg">
           <p>
             <strong>Name:</strong> {waitlist.name}

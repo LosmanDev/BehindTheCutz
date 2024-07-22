@@ -12,20 +12,6 @@ import Navbar from './Navbar';
 
 export default function Service() {
   const { setSelectedService } = useAppContext();
-  const services = [
-    { name: 'Eyebrows', price: '$15.00', icon: brow },
-    { name: 'Fade/Taper', price: '$25.00', icon: taper },
-    { name: 'Haircut + beard', price: '$30.00', icon: beard },
-    { name: 'Haircut + beard + eyebrows', price: '$35.00', icon: haircut },
-    {
-      name: "Kid's haircut under 10yrs",
-      price: '$15.00',
-      icon: kid,
-      note: 'For kids under 10 years of age',
-    },
-    { name: 'Lineup', price: '$15.00', icon: blade },
-  ];
-
   return (
     <>
       <Navbar />
@@ -36,7 +22,7 @@ export default function Service() {
             Service
           </span>
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-2xl w-full">
+        <div className="grid grid-cols-1 gap-5 max-w-2xl w-full">
           <Link
             data-aos="fade-right"
             data-aos-delay="200"

@@ -4,19 +4,21 @@ import { createClient } from '../utils/supabase/client';
 import { useState, useEffect } from 'react';
 
 export default function Welcome() {
-  const [waitlistCount, setWaitlistCount] = useState(0);
+  const [waitlistCount, setWaitlistCount] = useState(null);
 
   useEffect(() => {
     const fetchCount = async () => {
       const supabase = createClient();
-      const { count, error } = await supabase
-        .from('waitlist')
-        .select('*', { count: 'exact', head: true });
+      try {
+        const { count, error } = await supabase
+          .from('waitlist')
+          .select('*', { count: 'exact', head: true });
 
-      if (error) {
-        console.log('Error fetching waitlist count:', error);
-      } else {
+        if (error) throw error;
         setWaitlistCount(count || 0);
+      } catch (error) {
+        console.error('Error fetching waitlist count:', error);
+        setWaitlistCount(null);
       }
     };
 
@@ -117,7 +119,12 @@ export default function Welcome() {
           Join Waitlist
         </Link>
 
-        {waitlistCount > 0 ? (
+        {waitlistCount === null ? (
+          <div className="flex flex-row items-center justify-center gap-2">
+            <span className="loading loading-spinner loading-xs"></span>
+            <span>Loading...</span>
+          </div>
+        ) : waitlistCount > 0 ? (
           <div className="flex flex-row items-center justify-center mb-10">
             <div
               style={{ boxShadow: '0 0 10px rgba(0, 255, 0, 0.7)' }}

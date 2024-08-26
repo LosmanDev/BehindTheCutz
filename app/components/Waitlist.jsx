@@ -2,19 +2,19 @@
 import { createClient } from '../utils/supabase/client';
 import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function Waitlist() {
   const [waitlist, setWaitlist] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const fetchBookingDetails = async () => {
       const supabase = createClient();
-      const urlParams = new URLSearchParams(window.location.search);
-      const waitlistId = urlParams.get('id');
+      const waitlistId = searchParams.get('id');
 
       if (!waitlistId) {
         setError('No Waitlist ID provided');
@@ -33,12 +33,11 @@ export default function Waitlist() {
         setLoading(false);
       } else {
         setWaitlist(data);
-
         setLoading(false);
       }
     };
     fetchBookingDetails();
-  }, []);
+  }, [searchParams]);
 
   const handleRemoveBooking = async () => {
     if (!waitlist || !waitlist.id) {
@@ -46,7 +45,13 @@ export default function Waitlist() {
       return;
     }
 
+    const isConfirmed = window.confirm(
+      'Are you sure you want to leave the waitlist?',
+    );
+    if (!isConfirmed) return;
+
     const supabase = createClient();
+
     const { error } = await supabase
       .from('waitlist')
       .delete()
@@ -66,6 +71,15 @@ export default function Waitlist() {
     }
   };
 
+  const formatPhoneNumber = (phoneNumberString) => {
+    const cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+      return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+    }
+    return null;
+  };
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!waitlist) return <div>No booking found</div>;
@@ -80,7 +94,8 @@ export default function Waitlist() {
             <strong>Name:</strong> {waitlist.name}
           </p>
           <p>
-            <strong>Phone:</strong> {waitlist.phone}
+            <strong>Phone:</strong>{' '}
+            {formatPhoneNumber(waitlist.phone) || waitlist.phone}
           </p>
           <p>
             <strong>Service:</strong> {waitlist.service}

@@ -38,11 +38,10 @@ export function AppProvider({ children }) {
       console.log('Error saving booking:', error);
       return { success: false, error: error.message };
     } else {
-      console.log('Booking Saved Succesfully:', data);
+      console.log('Booking Saved Successfully:', data);
       return { success: true, data: data[0] };
     }
   };
-
   return (
     <AppContext.Provider
       value={{

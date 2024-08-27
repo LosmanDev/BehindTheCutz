@@ -2,34 +2,72 @@
 import { useState, useEffect } from 'react';
 import { createClient } from '../utils/supabase/client';
 import Navbar from './Navbar';
+import { useRouter } from 'next/navigation';
 
 export default function Customers() {
-  const [waitlist, setWaitlist] = useState(null);
+  const [waitlist, setWaitlist] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const supabase = createClient();
+  const router = useRouter();
 
   useEffect(() => {
-    const fetchBookingDetails = async () => {
-      const supabase = createClient();
-
-      const { data, error } = await supabase
-        .from('waitlist')
-        .select('id, name, phone, service, staff, created_at, position');
-
-      if (error) {
-        setError('Failed to fetch waitlist details');
-        setLoading(false);
-      } else {
-        setWaitlist(data);
-        setLoading(false);
+    const checkAuth = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      if (!session) {
+        router.push('/login');
+        return;
       }
+      fetchBookingDetails();
     };
-    fetchBookingDetails();
-  }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!waitlist) return <div>No booking found</div>;
+    checkAuth();
+  }, [router]);
+
+  const fetchBookingDetails = async () => {
+    const { data, error } = await supabase
+      .from('waitlist')
+      .select('id, name, phone, service, staff, created_at, position', {
+        ascending: true,
+      });
+
+    if (error) {
+      setError('Failed to fetch waitlist details');
+      setLoading(false);
+    } else {
+      setWaitlist(data);
+      setLoading(false);
+    }
+  };
+
+  const handleRemoveCustomer = async (customerId) => {
+    const isConfirmed = window.confirm(
+      'Are you sure you want to remove this customer from the waitlist?',
+    );
+    if (!isConfirmed) return;
+
+    const { error } = await supabase
+      .from('waitlist')
+      .delete()
+      .eq('id', customerId);
+
+    if (error) {
+      setError('Failed to remove customer: ' + error.message);
+    } else {
+      setWaitlist(waitlist.filter((customer) => customer.id !== customerId));
+      alert('Customer removed successfully');
+    }
+  };
+
+  const handleTextClick = (phone) => {
+    const message = encodeURIComponent(
+      'Hi, your turn is coming up at Behind The Cutz!',
+    );
+    const url = `sms:${phone}&body=${message}`;
+    window.location.href = url;
+  };
 
   const formatPhoneNumber = (phoneNumberString) => {
     const cleaned = ('' + phoneNumberString).replace(/\D/g, '');
@@ -48,13 +86,9 @@ export default function Customers() {
     return phoneNumberString;
   };
 
-  const handleTextClick = (phone) => {
-    const message = encodeURIComponent(
-      'Hi, your turn is coming up soon at Behind The Cutz!',
-    );
-    const url = `sms:${phone}&body=${message}`;
-    window.location.href = url;
-  };
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!waitlist) return <div>No booking found</div>;
 
   return (
     <div className="mt-10 flex flex-col gap-8 justify-center items-center p-4">
@@ -133,11 +167,14 @@ export default function Customers() {
                     </span>
                   </td>
                   <td className="md:table-cell px-4">
-                    <button className="btn btn-outline btn-error btn-sm mr-3">
+                    <button
+                      className="btn border-error px-16 shadow-[#ff0015b3] shadow-lg mr-2"
+                      onClick={() => handleRemoveCustomer(entry.id)}
+                    >
                       Remove
                     </button>
                     <button
-                      className="btn btn-outline btn-info btn-sm"
+                      className="btn border-primary px-16 shadow-[#000dffb3] shadow-lg "
                       onClick={() => handleTextClick(entry.phone)}
                     >
                       Text

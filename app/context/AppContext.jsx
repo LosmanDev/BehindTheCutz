@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from 'react';
 import { createClient } from '../utils/supabase/client';
 
 const AppContext = createContext();

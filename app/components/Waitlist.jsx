@@ -14,7 +14,8 @@ export default function Waitlist() {
   useEffect(() => {
     const fetchBookingDetails = async () => {
       const supabase = createClient();
-      const waitlistId = searchParams.get('id');
+      const urlParams = new URLSearchParams(window.location.search);
+      const waitlistId = urlParams.get('id');
 
       if (!waitlistId) {
         setError('No Waitlist ID provided');
@@ -37,7 +38,7 @@ export default function Waitlist() {
       }
     };
     fetchBookingDetails();
-  }, [searchParams]);
+  }, []);
 
   const handleRemoveBooking = async () => {
     if (!waitlist || !waitlist.id) {

@@ -2,14 +2,13 @@
 import { createClient } from '../utils/supabase/client';
 import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export default function Waitlist() {
   const [waitlist, setWaitlist] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     const fetchBookingDetails = async () => {
@@ -63,8 +62,6 @@ export default function Waitlist() {
     } else {
       // Remove from local storage
       localStorage.removeItem('lastWaitlist');
-      localStorage.removeItem('cachedWaitlist');
-      localStorage.removeItem('cacheTime');
 
       // Redirect to home page or show a success message
       alert('Booking removed successfully');

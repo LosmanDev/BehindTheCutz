@@ -99,91 +99,53 @@ export default function Customers() {
           Waitlist
         </span>
       </h1>
-
       {waitlist.map((entry) => (
-        <div key={entry.id} className="mb-8 w-full">
-          <div className="overflow-x-auto">
-            <table className="table w-full">
-              <thead className="hidden md:table-header-group">
-                <tr>
-                  <th className="text-2xl"></th>
-                  <th className="text-2xl">Name</th>
-                  <th className="text-2xl">Phone</th>
-                  <th className="text-2xl">Service</th>
-                  <th className="text-2xl">Staff</th>
-                  <th className="text-2xl">Position</th>
-                  <th className="text-2xl">Time</th>
-                  <th className="text-2xl">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="flex flex-col md:table-row ">
-                  <th className="md:table-cell bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold text-lg">
-                    Position:{' '}
-                    <span className="text-white text-md">{entry.position}</span>
-                  </th>
+        <div
+          id={entry.id}
+          className="flex flex-col gap-5 border-2 border-primary rounded-lg p-6 w-full max-w-md shadow-[#000dffb3] shadow-lg"
+        >
+          <p className="text-center">
+            <strong>Position in Line:</strong> {entry.position}
+          </p>
+          <p>
+            <strong>Name:</strong> {entry.name}
+          </p>
+          <p>
+            <strong>Phone:</strong>{' '}
+            {formatPhoneNumber(entry.phone) || entry.phone}
+          </p>
+          <p>
+            <strong>Service:</strong> {entry.service}
+          </p>
+          <p>
+            <strong>Staff:</strong> {entry.staff}
+          </p>
 
-                  <td className="md:table-cell">
-                    <span className="md:hidden mr-2 bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold text-lg">
-                      Name:
-                    </span>
-                    <span className="text-md">{entry.name}</span>
-                  </td>
-                  <td className="md:table-cell">
-                    <span className="md:hidden  mr-2 bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold text-lg">
-                      Phone:
-                    </span>
-                    <span className="text-md">
-                      {formatPhoneNumber(entry.phone)}
-                    </span>
-                  </td>
-                  <td className="md:table-cell">
-                    <span className="md:hidden  mr-2 bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold text-lg">
-                      Service:
-                    </span>
-                    <span className="text-md">{entry.service}</span>
-                  </td>
-                  <td className="md:table-cell">
-                    <span className="md:hidden  mr-2 bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold text-lg">
-                      Staff:
-                    </span>
-                    <span className="text-md">{entry.staff}</span>
-                  </td>
-
-                  <td className="md:table-cell">
-                    <span className="md:hidden font-bold mr-2 bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue text-lg">
-                      Time:
-                    </span>
-                    <span className="text-md">
-                      {new Date(entry.created_at).toLocaleString('en-US', {
-                        year: 'numeric',
-                        month: '2-digit',
-                        day: '2-digit',
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        second: '2-digit',
-                        hour12: true,
-                      })}
-                    </span>
-                  </td>
-                  <td className="md:table-cell px-4">
-                    <button
-                      className="btn border-error px-16 shadow-[#ff0015b3] shadow-lg mr-2"
-                      onClick={() => handleRemoveCustomer(entry.id)}
-                    >
-                      Remove
-                    </button>
-                    <button
-                      className="btn border-primary px-16 shadow-[#000dffb3] shadow-lg "
-                      onClick={() => handleTextClick(entry.phone)}
-                    >
-                      Text
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <p>
+            <strong>Booking Time:</strong>
+            <br />
+            {new Date(entry.created_at).toLocaleString('en-US', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit',
+              hour12: true,
+            })}
+          </p>
+          <button
+            className="btn border-error px-5 shadow-[#ff0015b3] shadow-lg mr-2"
+            onClick={() => handleRemoveCustomer(entry.id)}
+          >
+            Remove
+          </button>
+          <button
+            className="btn border-primary px-5 shadow-[#000dffb3] shadow-lg "
+            onClick={() => handleTextClick(entry.phone)}
+          >
+            Text
+          </button>
         </div>
       ))}
     </div>

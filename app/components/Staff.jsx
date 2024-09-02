@@ -29,7 +29,7 @@ export default function Staff() {
               setSelectedStaff('Axconse');
             }}
           >
-            Axconse
+            Acxonse
           </Link>
           <Link
             data-aos="fade-right"

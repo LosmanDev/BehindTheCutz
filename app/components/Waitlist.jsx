@@ -85,9 +85,19 @@ export default function Waitlist() {
   return (
     <>
       <Navbar />
+
       <div className="mt-10 flex flex-col gap-8 justify-center items-center p-4">
-        <h1 className="text-2xl">Waitlist Confirmation</h1>
-        <div className="border-2 border-primary rounded-lg p-6 w-full max-w-md shadow-[#000dffb3] shadow-lg">
+        <h1 className="text-2xl mb-5">
+          Waitlist{' '}
+          <span className="bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-bold">
+            Confirmation
+          </span>
+        </h1>
+        <div className="flex flex-col gap-5 border-2 border-primary rounded-lg p-6 w-full max-w-md shadow-[#000dffb3] shadow-lg">
+          <p className="text-center">
+            <strong>Position in Line:</strong>{' '}
+            {waitlist.position ?? 'Position not available'}
+          </p>
           <p>
             <strong>Name:</strong> {waitlist.name}
           </p>
@@ -101,13 +111,10 @@ export default function Waitlist() {
           <p>
             <strong>Staff:</strong> {waitlist.staff}
           </p>
-          <p>
-            <strong>Position in Line:</strong>{' '}
-            {waitlist.position ?? 'Position not available'}
-          </p>
 
           <p>
-            <strong>Booking Time:</strong>{' '}
+            <strong>Booking Time:</strong>
+            <br />
             {new Date(waitlist.created_at).toLocaleString('en-US', {
               year: 'numeric',
               month: '2-digit',

@@ -24,12 +24,47 @@ export default function Customers() {
     };
 
     checkAuth();
-  }, [router]);
+
+    const subscription = supabase
+      .channel('waitlist_changes')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'waitlist' },
+        handleWaitlistChange,
+      )
+      .subscribe();
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [router, supabase]);
+
+  const handleWaitlistChange = (payload) => {
+    setWaitlist((currentWaitlist) => {
+      if (payload.eventType === 'INSERT') {
+        return [...currentWaitlist, payload.new].sort(
+          (a, b) => a.position - b.position,
+        );
+      } else if (payload.eventType === 'DELETE') {
+        return currentWaitlist.filter(
+          (customer) => customer.id !== payload.old.id,
+        );
+      } else if (payload.eventType === 'UPDATE') {
+        return currentWaitlist
+          .map((customer) =>
+            customer.id === payload.new.id ? payload.new : customer,
+          )
+          .sort((a, b) => a.position - b.position);
+      }
+      return currentWaitlist;
+    });
+  };
 
   const fetchBookingDetails = async () => {
     const { data, error } = await supabase
       .from('waitlist')
-      .select('id, name, phone, service, staff, created_at, position', {
+      .select('id, name, phone, service, staff, created_at, position')
+      .order('position', {
         ascending: true,
       });
 
@@ -56,7 +91,6 @@ export default function Customers() {
     if (error) {
       setError('Failed to remove customer: ' + error.message);
     } else {
-      setWaitlist(waitlist.filter((customer) => customer.id !== customerId));
       alert('Customer removed successfully');
     }
   };
@@ -105,7 +139,10 @@ export default function Customers() {
           className="flex flex-col gap-5 border-2 border-primary rounded-lg p-6 w-full max-w-md shadow-[#000dffb3] shadow-lg"
         >
           <p className="text-center">
-            <strong>Position in Line:</strong> {entry.position}
+            <strong>Position in Line:</strong>{' '}
+            <span className="bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-extrabold">
+              {entry.position}
+            </span>
           </p>
           <p>
             <strong>Name:</strong> {entry.name}

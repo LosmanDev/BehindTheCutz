@@ -26,7 +26,7 @@ export default function Staff() {
             href="/registration"
             className="shadow-[#000dffb3] shadow-lg flex flex-col items-center justify-center p-4 border-2 border-primary rounded-lg hover:bg-primary/10 transition-colors duration-300 h-25 w-full text-center"
             onClick={() => {
-              setSelectedStaff('Axconse');
+              setSelectedStaff('Acxonse');
             }}
           >
             Acxonse

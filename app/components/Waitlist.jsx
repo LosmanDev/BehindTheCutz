@@ -96,7 +96,9 @@ export default function Waitlist() {
         <div className="flex flex-col gap-5 border-2 border-primary rounded-lg p-6 w-full max-w-md shadow-[#000dffb3] shadow-lg">
           <p className="text-center">
             <strong>Position in Line:</strong>{' '}
-            {waitlist.position ?? 'Position not available'}
+            <span className="bg-gradient-to-r from-[#000dff] to-[#4A44F3] text-transparent bg-clip-text glow-effect-blue font-extrabold">
+              {waitlist.position ?? 'Position not available'}
+            </span>
           </p>
           <p>
             <strong>Name:</strong> {waitlist.name}
